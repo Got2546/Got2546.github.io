@@ -1,3 +1,3 @@
-# Thanet.github.io
+# Got2546.github.io
 
 Thanet Chomsri 
