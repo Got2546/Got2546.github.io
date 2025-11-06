@@ -1,0 +1,1 @@
+![Introduction to Dark Web Operations-course (pdf io)](https://academy.apnic.net/en/certificates/cybersecurity-fundamentals?course_id=26836&cert-nonce=de189e9c5a)
