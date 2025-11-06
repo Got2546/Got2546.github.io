@@ -7,7 +7,7 @@
 ---
 
 ## 🧠 Skills
-- [Cybersecurity Fundamentals](cybersecurity.md)
+- [Cybersecurity Fundamentals](/img/got-Cybersecurity-Fundamentals-Cybersecurity-Fundamentals-APNIC-Academy.pdf)
 
 ---
 
