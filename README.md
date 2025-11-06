@@ -7,7 +7,7 @@
 ---
 
 ## 🧠 Skills
-- Cybersecurity Fundamentals
+- [Cybersecurity Fundamentals](cybersecurity.md)
 
 ---
 
