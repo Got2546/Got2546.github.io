@@ -1,3 +1,5 @@
+[⬅ ย้อนกลับ](/README.md)
+
 ![This is an alt text.](/img/Channels.png )
 
 >## Glossary 
