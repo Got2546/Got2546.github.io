@@ -1,6 +1,6 @@
 **[⬅ ย้อนกลับ](https://got2546.github.io/)**
 
-# **GPT**
+# --- GPT ---
 
 ![This is an alt text.](/img/Gpt.png )
 
