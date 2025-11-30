@@ -12,7 +12,7 @@
 ---
 
 ## 🧑‍🎓 Vocabuary
-- [Cybersecurity Fundamentals](/img/got-Cybersecurity-Fundamentals-Cybersecurity-Fundamentals-APNIC-Academy.pdf)
+- [Cybersecurity Fundamentals](/Vocabuary/GPT.my)
 
 ---
 
