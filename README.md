@@ -12,8 +12,10 @@
 ---
 
 ## 🧑‍🎓 Vocabuary
+- [thread](/Vocabuary/thread.md)
+- [channels](/Vocabuary/channels.md)
 - [GPT](/Vocabuary/GPT.md)
-
+ 
 ---
 
 ## 📫 Contact
