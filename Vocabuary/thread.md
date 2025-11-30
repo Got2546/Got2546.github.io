@@ -1,4 +1,4 @@
-![This is an alt text.](/img/Gpt.png )
+# BorntoDev Heading 1
 
 >## Glossary 
 - An object inside a process that runs program instructions. If an operating system allows it, multiple threads can run on different processors at the same time.
