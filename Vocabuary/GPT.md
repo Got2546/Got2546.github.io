@@ -1,6 +1,4 @@
 
-# GPT
-
 # Glossary
 + The portion of a Group Policy Object (GPO) that is stored on the domain controller's file system.
 
