@@ -1,3 +1,4 @@
+
 #### GPT
 
 | CompTIS | Gemini | ChatGpt | หาเอง |

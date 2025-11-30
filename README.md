@@ -12,7 +12,7 @@
 ---
 
 ## 🧑‍🎓 Vocabuary
-- [Cybersecurity Fundamentals](/Vocabuary/GPT.my)
+- [GPT](/Vocabuary/GPT.my)
 
 ---
 
