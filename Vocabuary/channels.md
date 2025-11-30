@@ -11,8 +11,6 @@
 
 >## ChatGpt
 - ช่องทาง / ช่องสื่อสาร (Communication channels) ใช้บ่อยที่สุด หมายถึง ช่องทางที่ใช้ติดต่อสื่อสารหรือส่งข้อมูล
-
->ตัวอย่าง
     1. Social media channels = ช่องทางโซเชียล
     2. Communication channels = ช่องทางการสื่อสาร
     3. Marketing channels = ช่องทางการตลาด
