@@ -1,6 +1,6 @@
-![This is an alt text.](/img/Gpt.png "This is a sample image.")
+![This is an alt text.](/img/Gpt.png )
 
->## Glossary
+>## Glossary 
 - The portion of a Group Policy Object (GPO) that is stored on the domain controller's file system.
 
 >## Gemini
