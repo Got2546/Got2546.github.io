@@ -12,7 +12,7 @@
 ---
 
 ## 🧑‍🎓 Vocabuary
-- [GPT](/Vocabuary/GPT.my)
+- [GPT](/Vocabuary/GPT.md)
 
 ---
 
