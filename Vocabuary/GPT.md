@@ -1,4 +1,4 @@
-
+![This is an alt text.](/img/Gpt.png "This is a sample image.")
 # GPT
 
 > [!NOTE]
