@@ -4,10 +4,10 @@
 - The portion of a Group Policy Object (GPO) that is stored on the domain controller's file system.
 
 >## Gemini
-- GPT ย่อมาจาก Generative Pre-trained Transformer ครับ ซึ่งเป็นชื่อของสถาปัตยกรรมทางปัญญาประดิษฐ์ (AI) ที่ออกแบบมาให้เข้าใจและ "สร้าง" ภาษาได้ใกล้เคียงกับมนุษย์มาก ๆ
+- ส่วนของ Group Policy Object (GPO) ที่ถูกจัดเก็บไว้ในระบบไฟล์ของโดเมนคอนโทรลเลอร์
 
 >## ChatGpt
-- GPT ย่อมาจาก Generative Pre-trained Transformer แปลเป็นไทยแบบง่าย ๆ คือ “ระบบปัญญาประดิษฐ์ที่ถูกฝึกมาก่อนแล้ว และสามารถสร้างข้อความขึ้นมาใหม่ได้
+- ส่วนหนึ่งของ Group Policy Object (GPO) ที่ถูกจัดเก็บไว้ในระบบไฟล์ของ Domain Controller
 
->## หาเอง
-- AI ที่เชี่ยวชาญด้านการเข้าใจและการสร้างภาษามนุษย์
+>## MySelf
+- ส่วนของ GPO ที่ถูกเก็บอยู่ในเครื่องเซิร์ฟเวอร์โดเมนนั่นแหละ
