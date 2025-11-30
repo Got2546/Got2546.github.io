@@ -1,4 +1,4 @@
-[⬅ ย้อนกลับ](README.md)
+[⬅ ย้อนกลับ](https://got2546.github.io/)
 
 ![This is an alt text.](/img/Channels.png )
 
