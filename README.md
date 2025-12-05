@@ -14,7 +14,7 @@
 ## 🧑‍🎓 Vocabuary
 - [thread](/Vocabuary/thread.md)
 - [channels](/Vocabuary/channels.md)
-- [GPT](/Vocabuary/GPT.md)
+- [GPO](/Vocabuary/GPT.md)
  
 ---
 
