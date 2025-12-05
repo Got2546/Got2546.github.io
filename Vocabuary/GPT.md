@@ -1,17 +1,17 @@
 **[⬅ ย้อนกลับ](https://got2546.github.io/)**
 
-# --- GPT ---
+# --- GPO ---
 
-![This is an alt text.](/img/Gpt.png )
+![This is an alt text.](/img/Gpo.jpg )
 
 >## Glossary 
-- The portion of a Group Policy Object (GPO) that is stored on the domain controller's file system.
+- An Active Directory object that contains user-specific and/or computer-specific settings that Windows 2000 must enforce.
 
 >## Gemini
-- ส่วนของ Group Policy Object (GPO) ที่ถูกจัดเก็บไว้ในระบบไฟล์ของโดเมนคอนโทรลเลอร์
+- วัตถุ (Object) ใน Active Directory ที่ประกอบไปด้วยการตั้งค่าเฉพาะสำหรับผู้ใช้ (User) และ/หรือ คอมพิวเตอร์ ซึ่ง Windows 2000 จำเป็นต้องนำไปบังคับใช้
 
 >## ChatGpt
-- ส่วนหนึ่งของ Group Policy Object (GPO) ที่ถูกจัดเก็บไว้ในระบบไฟล์ของ Domain Controller
+- วัตถุ (Object) ใน Active Directory ที่บรรจุการตั้งค่าต่าง ๆ ที่เฉพาะสำหรับผู้ใช้และ/หรือคอมพิวเตอร์ ซึ่ง Windows 2000 จำเป็นต้องบังคับใช้ (Enforce)
 
 >## MySelf
-- ส่วนของ GPO ที่ถูกเก็บอยู่ในเครื่องเซิร์ฟเวอร์โดเมนนั่นแหละ
+- เป็นวัตถุใน Active Directory ที่เก็บค่าการตั้งค่าของผู้ใช้หรือคอมพิวเตอร์ และระบบ Windows 2000 จะใช้ค่าพวกนี้เป็นกฎบังคับในการทำงาน
