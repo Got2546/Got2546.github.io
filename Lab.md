@@ -5,11 +5,17 @@
 # --- กำหนดค่า Microsoft Defender ---
 
 ## ✅ สิ่งที่ทําในแล็บนี้
-- 1) เข้าไปยังเมนู Virus & threat protection
-เริ่มจากเข้า Settings → Update & Security → Windows Security → Virus & threat protection
-ขั้นตอนนี้ทำให้เราเข้าถึงศูนย์ควบคุมการป้องกันไวรัส ซึ่งตามแนว CompTIA ถือเป็นด่านแรกของการป้องกันมัลแวร์ (ข้อ Anti-malware ใน Malware Prevention)
+### ✅ 1 เปิดโปรแกรมป้องกันไวรัส
+- 1) คลิกปุ่ม Start (ปุ่มรูปโลโก้ Windows)
+- คือปุ่มเริ่มต้นของระบบที่ใช้เปิดโปรแกรมต่าง ๆ
+- 2) เลือก Settings (รูปฟันเฟือง)
+- คือเมนูตั้งค่าของเครื่อง
+- 3) เลือก Update & Security
+- เมนูสำหรับอัปเดตและความปลอดภัย
+- 4) คลิก Windows Security
+- เมนูสำหรับเปิดระบบป้องกันไวรัส
 
-- 2) เพิ่ม File Exclusion สำหรับไฟล์ cat.jpg
+### ✅ 2 เพิ่ม File Exclusion สำหรับไฟล์ cat.jpg
 เข้าเมนู Manage settings → Exclusions → Add an exclusion → File
 เลือกไฟล์ที่กำหนด: D:\Graphics\cat.jpg
 เหตุผลที่ต้องรู้วิธีเพิ่ม Exclusion เพราะในการทำงานบางครั้งโปรแกรมต่าง ๆ อาจถูกรบกวนจาก Antivirus ดังนั้น IT จึงต้องรู้วิธี “ยกเว้นไฟล์ที่ปลอดภัย”
