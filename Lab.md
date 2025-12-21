@@ -5,6 +5,47 @@
 # --- กำหนดค่า Microsoft Defender ---
 
 ## ✅ สิ่งที่ทําในแล็บนี้
+
+![This is an alt text.](/img/1.jpg )
+![This is an alt text.](/img/2.jpg )
+![This is an alt text.](/img/3.jpg )
+![This is an alt text.](/img/4.jpg )
+![This is an alt text.](/img/5.jpg )
+![This is an alt text.](/img/6.jpg )
+![This is an alt text.](/img/7.jpg )
+![This is an alt text.](/img/8.jpg )
+![This is an alt text.](/img/9.jpg )
+![This is an alt text.](/img/10.jpg )
+![This is an alt text.](/img/11.jpg )
+![This is an alt text.](/img/12.jpg )
+![This is an alt text.](/img/13.jpg )
+![This is an alt text.](/img/14.jpg )
+![This is an alt text.](/img/15.jpg )
+![This is an alt text.](/img/16.jpg )
+![This is an alt text.](/img/17.jpg )
+![This is an alt text.](/img/18.jpg )
+![This is an alt text.](/img/19.jpg )
+![This is an alt text.](/img/20.jpg )
+![This is an alt text.](/img/21.jpg )
+![This is an alt text.](/img/22.jpg )
+![This is an alt text.](/img/23.jpg )
+![This is an alt text.](/img/24.jpg )
+![This is an alt text.](/img/25.jpg )
+![This is an alt text.](/img/26.jpg )
+![This is an alt text.](/img/27.jpg )
+![This is an alt text.](/img/28.jpg )
+![This is an alt text.](/img/29.jpg )
+![This is an alt text.](/img/30.jpg )
+![This is an alt text.](/img/31.jpg )
+![This is an alt text.](/img/32.jpg )
+![This is an alt text.](/img/33.jpg )
+![This is an alt text.](/img/34.jpg )
+![This is an alt text.](/img/35.jpg )
+![This is an alt text.](/img/36.jpg )
+![This is an alt text.](/img/37.jpg )
+
+
+
 ### 1 เปิดโปรแกรมป้องกันไวรัส
 - 1) คลิกปุ่ม Start (ปุ่มรูปโลโก้ Windows)
 >
