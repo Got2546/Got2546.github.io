@@ -92,65 +92,14 @@ Virus & threat protection settings
 > กด Back กลับมาหน้า Virus & threat protection
 ![This is an alt text.](/img/33.jpg )
 
-> ใต้หัวข้อ Current threats 
-![This is an alt text.](/img/34.jpg )
-
 > ให้คลิก Quick scan
-![This is an alt text.](/img/35.jpg )
-
-> รอจนสแกนเสร็จ แล้วดูผล:
 ![This is an alt text.](/img/36.jpg )
 
-> 
+> รอจนสแกนเสร็จ แล้วดูผล:
+>> No threats found / No current threats = ไม่พบภัยคุกคาม
+>> ถ้าพบภัยคุกคาม จะมีปุ่ม Start actions ให้จัดการ
 ![This is an alt text.](/img/37.jpg )
 
-
-
-### 1 เปิดโปรแกรมป้องกันไวรัส
-- 1) คลิกปุ่ม Start (ปุ่มรูปโลโก้ Windows)
->
->> คือปุ่มเริ่มต้นของระบบที่ใช้เปิดโปรแกรมต่าง ๆ
-- 2) เลือก Settings (รูปฟันเฟือง)
->
->> คือเมนูตั้งค่าของเครื่อง
-- 3) เลือก Update & Security
->
->> เมนูสำหรับอัปเดตและความปลอดภัย
-- 4) คลิก Windows Security
->
->> เมนูสำหรับเปิดระบบป้องกันไวรัส
-
-### 2 เพิ่มการยกเว้นไฟล์ D:\Graphics\cat.jpg
-- 1) คลิก Virus & threat protection
->
->> ปุ่มเข้าเมนูป้องกันไวรัสและภัยคุกคาม
-- 2) คลิก Manage settings
->
->> ปุ่มตั้งค่าการสแกน
-- 3) เลื่อนลงมาหา Exclusions
->
->> ส่วนที่ใช้เพิ่มไฟล์/โฟลเดอร์/โปรเซสที่ไม่ต้องสแกน
-- 4) คลิก Add or remove exclusions
->
-- 5) คลิก Add an exclusion
->
-- 6) เลือก File
->
->> คือเลือกเพิ่มไฟล์เฉพาะ
-- 7) ไปที่ D:\Graphics\cat.jpg
->
->> คือเลือกเพิ่มไฟล์เฉพาะ
-
-### 3 เพิ่มการยกเว้น Process welcome.scr
-- 1) คลิก Add an exclusion อีกครั้ง
-
-- 2) เลือก Process
->
->> คือการยกเว้นโปรแกรมที่รันอยู่
-
-- 3) พิมพ์ welcome.scr
-
-- 4) กด Add
 
 >## ⭐ สรุปภาพรวม
 - ในการทำแล็บนี้ เป้าหมายคือ เรียนรู้การตั้งค่าระบบป้องกันมัลแวร์ใน Windows Security (Windows Defender) ซึ่งเป็นทักษะพื้นฐานที่คนทำงานด้าน Cybersecurity ต้องรู้ โดยเฉพาะเรื่องการ ตั้งค่า Exclusion, ดูเวอร์ชัน Threat Definition, อัปเดตความปลอดภัย, และ สแกนมัลแวร์ ที่เป็นงานประจำของฝ่าย IT Security จากบทเรียน CompTIA Security Pro ได้อธิบายไว้ว่า การป้องกันมัลแวร์ต้องอาศัยหลายอย่าง เช่นการอัปเดตแพตช์, ป้องกันไวรัส, firewall และการฝึกผู้ใช้ให้รู้เท่าทันภัยคุกคาม
