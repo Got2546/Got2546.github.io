@@ -52,31 +52,56 @@ Virus & threat protection settings
 > ให้คลิก Add or remove exclusions
 ![This is an alt text.](/img/13.jpg )
 
-> คลิก + Add an exclusion
-![This is an alt text.](/img/15.jpg )
-
-> เลือก File
+> คลิก + Add an exclusion + เลือก File
 ![This is an alt text.](/img/16.jpg )
+
+> หน้าต่างเลือกไฟล์จะเด้งขึ้นมา ให้ไปตามเส้นทางนี้:
+>> คลิก This PC
 ![This is an alt text.](/img/17.jpg )
+
+> ดับเบิลคลิกไดรฟ์ D:
 ![This is an alt text.](/img/18.jpg )
+
+> ดับเบิลคลิกโฟลเดอร์ Graphics
 ![This is an alt text.](/img/19.jpg )
+
+> คลิกไฟล์ cat.jpg
 ![This is an alt text.](/img/20.jpg )
+
+> คลิก Open
 ![This is an alt text.](/img/21.jpg )
+
+>เพิ่มการยกเว้นกระบวนการ welcome.scr
+>> ยังอยู่หน้า Add or remove exclusions
+>>> คลิก + Add an exclusion
 ![This is an alt text.](/img/22.jpg )
+
+> เลือก Process
 ![This is an alt text.](/img/23.jpg )
+
+> พิมพ์:
+>> welcome.scr
 ![This is an alt text.](/img/24.jpg )
+
+> กด Add (หรือกด Enter)
 ![This is an alt text.](/img/25.jpg )
+
+> ต้องเห็นรายการเพิ่มเป็น welcome.scr
 ![This is an alt text.](/img/26.jpg )
-![This is an alt text.](/img/27.jpg )
-![This is an alt text.](/img/28.jpg )
-![This is an alt text.](/img/29.jpg )
-![This is an alt text.](/img/30.jpg )
-![This is an alt text.](/img/31.jpg )
-![This is an alt text.](/img/32.jpg )
+
+> กด Back กลับมาหน้า Virus & threat protection
 ![This is an alt text.](/img/33.jpg )
+
+> ใต้หัวข้อ Current threats 
 ![This is an alt text.](/img/34.jpg )
+
+> ให้คลิก Quick scan
 ![This is an alt text.](/img/35.jpg )
+
+> รอจนสแกนเสร็จ แล้วดูผล:
 ![This is an alt text.](/img/36.jpg )
+
+> 
 ![This is an alt text.](/img/37.jpg )
 
 
