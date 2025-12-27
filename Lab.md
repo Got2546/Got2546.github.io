@@ -5,22 +5,57 @@
 # --- กำหนดค่า Microsoft Defender ---
 
 ## ✅ สิ่งที่ทําในแล็บนี้
+# ขั้นตอนที่ 1 เปิดโปรแกรม Windows Security
 
+> คลิกที่ช่อง Type here to search บริเวณแถบงาน (Taskbar) ด้านล่างของหน้าจอ
+>> เป็นช่องค้นหาของระบบ Windows ใช้ค้นหาโปรแกรมและการตั้งค่าต่าง ๆ
 ![This is an alt text.](/img/1.jpg )
+
+> พิมพ์คำว่า
+>> Windows Security
 ![This is an alt text.](/img/2.jpg )
+
+> เมื่อแอป Windows Security ปรากฏขึ้น ให้คลิกเพื่อเปิดโปรแกรม
 ![This is an alt text.](/img/3.jpg )
+
+# วิธีที่ 2 (จากหน้า Security at a glance)
+
+> ที่หน้า Security at a glance
+>> ให้มองหาหัวข้อ Virus & threat protection
 ![This is an alt text.](/img/4.jpg )
+
+> คลิก Virus & threat protection
 ![This is an alt text.](/img/5.jpg )
+
+> อยู่หน้า Security at a glance
 ![This is an alt text.](/img/6.jpg )
+
+> ในหน้า Virus & threat protection 
 ![This is an alt text.](/img/7.jpg )
+
+> ให้เลื่อนลงหา
+Virus & threat protection settings
 ![This is an alt text.](/img/8.jpg )
+
+> คลิก Manage settings
+>> ปุ่มนี้คือ “เข้าไปตั้งค่าการป้องกัน”
 ![This is an alt text.](/img/9.jpg )
-![This is an alt text.](/img/10.jpg )
+
+> ตรวจดูสวิตช์สำคัญ (ถ้า OFF ให้คลิกให้เป็น ON)
+>> Real-time protection = ON
+>>> ป้องกันไวรัสแบบเรียลไทม์
 ![This is an alt text.](/img/11.jpg )
+
+> ยังอยู่หน้า Manage settings ให้เลื่อนลงหา Exclusions
 ![This is an alt text.](/img/12.jpg )
+
+> ให้คลิก Add or remove exclusions
 ![This is an alt text.](/img/13.jpg )
-![This is an alt text.](/img/14.jpg )
+
+> คลิก + Add an exclusion
 ![This is an alt text.](/img/15.jpg )
+
+> เลือก File
 ![This is an alt text.](/img/16.jpg )
 ![This is an alt text.](/img/17.jpg )
 ![This is an alt text.](/img/18.jpg )
