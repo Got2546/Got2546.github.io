@@ -8,7 +8,9 @@
 
 ## 🧠 Skills
 - [Cybersecurity Fundamentals](/Skills.md)
-
+- [Gemini Certified Educator](/gemini_educator.md)
+- [Gemini Certified Faculty](/gemini_faculty.md)
+- [Gemini Certified University Student](/gemini_student.md)
 ---
 
 ## 🧑‍🎓 Vocabuary
