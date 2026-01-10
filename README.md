@@ -19,17 +19,17 @@
 ---
 
 ## 🤓 Lab
-- [กำหนดค่า Microsoft Defender](/Lab.md)
+- [สิ่งที่ทําในแล็บนี้](/Lab.md)
 
 ---
 
 ## 💳 Christmas card
-- [กำหนดค่า Microsoft Defender](/Christmas.md)
+- [การ์ดอวยพร](/Christmas.md)
 
 ---
 
 ## 📈 Git Wrapped 2025
-- [กำหนดค่า Microsoft Defender](/Christmas.md)
+- [2025 Year in Code ](/apichit.md)
 
 ---
 
