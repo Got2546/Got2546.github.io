@@ -31,7 +31,7 @@
 ---
 
 ## 📈 Git Wrapped 2025
-- [2025 Year in Code ](/apichit.md)
+- [2025 Year in Code ](/year.md)
 
 ---
 
