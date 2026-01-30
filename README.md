@@ -36,6 +36,10 @@
 
 ---
 
+## 🏷️ ป้าย pdpa
+- [pdpa](/PDPA.md)
+
+---
 ## 📫 Contact
 - Email: got46483@gmail.com  
 - Facebook: [Thanet Chomsri](https://www.facebook.com/thanet.chomsri.2024/)
