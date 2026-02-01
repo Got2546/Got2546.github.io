@@ -42,8 +42,8 @@
 ---
 
 ## 🔒 Security Control in Daily Life
-- [Daily Life](/DailyLife.md)
-
+- [ถังดับเพลิง](/Physical.md)
+- [ป้ายระเบียบ](/Administrative.md)
 
 ---
 ## 📫 Contact
