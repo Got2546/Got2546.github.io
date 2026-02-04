@@ -42,8 +42,8 @@
 ---
 
 ## 🔒 Security Control in Daily Life
-- [ถังดับเพลิง](/Firefighting.md)
-- [ป้ายระเบียบ](/Order.md)
+- [Firefighting](/Firefighting.md)
+- [Order](/Order.md)
 
 ---
 ## 📫 Contact
