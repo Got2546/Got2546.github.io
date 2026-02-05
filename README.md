@@ -23,7 +23,12 @@
 
 ## 🤓 Lab
 - [สิ่งที่ทําในแล็บนี้](/Lab.md)
-- [แล็บ WebSec](/WebSec.md)
+- [ปัญหาที่ตรวจพบจาก RIPS](/session.md)
+---
+
+## 📋 Downloading and installing
+- [VirtualBox](/VirtualBox.md)
+- [WinSCP 6.5](/WinSCP.md)
 
 ---
 
