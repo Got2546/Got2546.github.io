@@ -99,7 +99,7 @@
 + การทดสอบ: ยิง Payload เดิม ../../../../etc/passwd
 + ผลลัพธ์: หน้าเว็บขึ้นข้อความสีแดง "Access Denied" แทนที่จะโชว์ไฟล์ความลับ
 + สถานะ: ✅ ผ่าน (กันแฮกเกอร์ได้แล้ว)
-![This is an alt text.](/img/img2/65.jpg)
+![This is an alt text.](/img/img2/68.png)
 
 ## ตรวจสอบกับ RIPS (Static Analysis Check)
 + การทดสอบ: สแกนไฟล์ rlfi.php ซ้ำ
