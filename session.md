@@ -1,7 +1,8 @@
 **[⬅ ย้อนกลับ](https://got2546.github.io/)**
 
-# --- ___ปัญหาที่ตรวจพบจาก RIPS___ ---
-![This is an alt text.](/img/img2/50.jpg)
+# --- ___การจัดการช่องโหว่ Local File Inclusion (LFI)___ ---
+## เป้าหมาย: ไฟล์ rlfi.php ในระบบ bWAPP ระดับความยาก: ปานกลาง (Medium)
+![This is an alt text.](/img/img2/63.png)
 
 === 
 
@@ -11,138 +12,112 @@
 
 === 
 
-# Help - Session Fixation แล้วกดดาวน์โหลดไฟล์ติดตั้ง (Setup.exe)
+# ทฤษฎีและกลไก (The Concept)
+## ก่อนจะเจาะ เราต้องเข้าใจก่อนว่า "มันพังเพราะอะไร"
 
 
-#### แนวคิดของช่องโหว่
+## Local File Inclusion (LFI) คืออะไร?
+### LFI คือช่องโหว่ที่เกิดขึ้นเมื่อเว็บไซต์ "ยอมรับชื่อไฟล์จากผู้ใช้" แล้วนำไปเปิดใช้งานโดยไม่ตรวจสอบ แฮกเกอร์จึงฉวยโอกาสเปลี่ยนชื่อไฟล์เป็นไฟล์ความลับของระบบ (เช่น ไฟล์รหัสผ่าน) เพื่อให้หน้าเว็บแสดงผลออกมา
 
-| source | sink | vulnerability |
-| :---- | :----: | ----: |
-| 1$_POST + | setcookie() | = Session Fixation |
-
----
-
-# คำอธิบายช่องโหว่ (Vulnerability Description)
-Session Fixation เป็นช่องโหว่ที่ผู้โจมตีสามารถบังคับให้ผู้ใช้งานใช้ Session ID ที่ผู้โจมตีกำหนดไว้ล่วงหน้า ได้ เมื่อผู้ใช้งานทำการเข้าสู่ระบบเรียบร้อยแล้ว ผู้โจมตีจะสามารถใช้ Session ID เดียวกันนั้น เพื่อเข้าถึงบัญชีของผู้ใช้งานและสวมรอยเป็นผู้ใช้งานได้ทันที
+## กลไกการทำงานของ PHP
+### ในภาษา PHP คำสั่ง include() มีหน้าที่ "ดูด" โค้ดจากไฟล์อื่นมารันในหน้านี้
++ ปกติ: เราส่ง lang_en.php -> ระบบไปดูดไฟล์ภาษาอังกฤษมาแสดง
++ โจมตี: เราส่ง /etc/passwd -> ระบบไปดูดไฟล์รหัสผ่านของ Linux มาแสดง (เพราะมันซื่อบื้อ ทำตามคำสั่งทุกอย่าง)
 
 ---
 
-###### กล่าวโดยสรุปคือ
+# ขั้นตอนการค้นหา (Discovery Phase)
+## เราเริ่มต้นด้วยการใช้เครื่องมือตรวจสอบโค้ด (Static Application Security Testing - SAST)
+![This is an alt text.](/img/img2/63.png)
 
-> ระบบยอมรับ Session ID จากผู้ใช้โดยตรง ทำให้ผู้ไม่หวังดีสามารถควบคุม Session ของผู้อื่นได้
 
----
+## การสแกนด้วย RIPS
++ เป้าหมาย: สแกนโฟลเดอร์ /var/www/html/bWAPP/
++ การตั้งค่า: เลือกไฟล์ rlfi.php หรือค้นหา keyword ว่า xss หรือ file inclusion
 
-# ตัวอย่างโค้ดที่มีช่องโหว่ (Vulnerable Example Code)
-
+## วิเคราะห์ผลลัพธ์ (Code Analysis)
+### จากรูปที่คุณส่งมา RIPS แจ้งเตือนสีเหลืองที่บรรทัด 94
 ```php
-setcookie("PHPSESSID", $_GET["sessid"]);
+94: include($language);
 ```
-
-> โค้ดตัวอย่างนี้แสดงให้เห็นว่า
-ระบบนำค่า Session ID ที่รับมาจากผู้ใช้ผ่าน URL ไปตั้งค่าเป็น Session ของระบบโดยตรง ซึ่งเป็นพฤติกรรมที่ไม่ปลอดภัย
-
----
-
-# ตัวอย่างการโจมตี (Proof of Concept)
-
-```bash
-/index.php?sessid=1f3870be274f6c49b3e31a0c6728957f
-```
-
-> ผู้โจมตีสามารถส่ง Session ID ผ่าน URL ให้ผู้ใช้งาน หากระบบนำค่า Session ID นี้ไปใช้งานจริง ผู้โจมตีก็สามารถใช้ Session เดียวกันเข้ามาในระบบได้ภายหลัง
+### RIPS กำลังบอกเราว่า
+1. Source (จุดรับเชื้อ): ตัวแปร $language รับค่ามาจาก $_GET["language"] (สิ่งที่ผู้ใช้พิมพ์ใน URL)
+2. Flow (การไหล): ไม่มีการกรองคำสั่ง (No sanitization) เชื้อโรคไหลผ่านฉลุย
+3. Sink (จุดระเบิด): ตัวแปรนั้นไหลลงไปในฟังก์ชัน include() โดยตรง
 
 ---
 
-# แนวทางการแก้ไข (Patch)
-## ไม่ควรนำ Session Token หรือ Session ID ที่ผู้ใช้ส่งเข้ามาไปใช้งานโดยตรง
-ระบบควรเป็นผู้สร้างและจัดการ Session ID เองทั้งหมด เพื่อป้องกันไม่ให้ผู้โจมตีสามารถกำหนด Session ID ให้ผู้ใช้งานได้
+# ขั้นตอนการเจาะระบบ (Exploitation Phase)
+## เมื่อรู้ว่าโค้ดมีช่องโหว่ เราต้องพิสูจน์ด้วยการขโมยไฟล์ /etc/passwd (ไฟล์เก็บรายชื่อ User ใน Linux)
+![This is an alt text.](/img/img2/66.png)
 
-```bash
-1. No code.
-```
 
----
+## เทคนิค Directory Traversal (../)
+### ปกติไฟล์ rlfi.php อยู่ลึกมากที่ /var/www/html/bWAPP/rlfi.php ถ้าเราสั่งให้เปิด /etc/passwd เฉยๆ มันจะหาไม่เจอ เพราะมันจะไปหาที่ /var/www/html/bWAPP/etc/passwd
 
-# ฟังก์ชันที่ช่วยเพิ่มความปลอดภัย (Related Securing Functions)
+## เราจึงต้องใช้รหัสลับ ../ (จุดจุดทับ) ซึ่งแปลว่า "ถอยหลังกลับไป 1 โฟลเดอร์"
 
-> ไม่มีฟังก์ชันเฉพาะที่ระบุไว้
-แต่ควรใช้การจัดการ Session ของฝั่ง Server อย่างเหมาะสม เช่น การสร้าง Session ID ใหม่จากระบบเท่านั้น
+## การสร้าง Payload (สูตรโกง)
+เราต้องถอยหลังไปให้ถึงราก (Root Directory)
+1. อยู่ที่ bWAPP -> ใช้ ../ ถอยไป html
+2. อยู่ที่ html -> ใช้ ../ ถอยไป www
+3. อยู่ที่ www -> ใช้ ../ ถอยไป var
+4. อยู่ที่ var -> ใช้ ../ ถอยไป / (Root)
+## Payload ที่สมบูรณ์: ../../../../etc/passwd
 
->>># None.
-
-=====
-
-# ปัญหาที่ RIPS เจอ
-### File: /var/www/html/bWAPP/commandi.php
-![This is an alt text.](/img/img2/51.jpg)
-
----
-
-# เปิด WinSCP
-![This is an alt text.](/img/img2/55.jpg)
-
-# แล้วมองดูช่องขวาว่าหาชื่อว่า selections.php
-![This is an alt text.](/img/img2/56.jpg)
-
-# จากนั้นทำการลากไฟล์ทีต้องการจากหน้าต่างทางด้านขวา (เครื่องเรา)ไปวางไว้ใน หน้าต่างทางด้านซ้าย (เครื่อง Server)
-![This is an alt text.](/img/img2/57.jpg)
-
-# จากนั้นคลิกขวาที่ไฟล์ชื่อว่าselections.php และกด Open
-![This is an alt text.](/img/img2/58.jpg)
-
-# จากนั้นจะขึ้นหน้าโค้ดมาให้แก้
-![This is an alt text.](/img/img2/59.jpg)
+## การโจมตีจริง (Execution)
++ URL: .../rlfi.php?language=../../../../etc/passwd&action=go
++ สิ่งที่ Server ทำ: มันจะวิ่งย้อน directory ตามที่เราสั่ง แล้วไปหยิบไฟล์ passwd มาแปะบนหน้าเว็บ
++ หลักฐาน: หน้าจอแสดงข้อความ root:x:0:0... ไหลออกมาเต็มหน้าจอ
 
 ---
 
-# ดูโค้ดก่อนแก้ (Before) ❌
+# ขั้นตอนการปิดช่องโหว่ (Remediation Phase)
+### การแก้ที่ยั่งยืนไม่ใช่การ "ห้ามคำว่า ../" (Blacklist) เพราะแฮกเกอร์มีวิธีหลบเลี่ยง วิธีที่ดีที่สุดคือ "Whitelist" (อนุญาตเฉพาะคนที่รู้จัก)
 
-```php
-Userinput reaches sensitive sink. For more information, press the help icon on the left side.
-78: setcookie setcookie("security_level", $security_level_cookie, time() + 60 * 60 * 24 * 365, "/", "", false, false);  // selections.php
-63: $security_level_cookie = "0";  // selections.phpswitch($security_level_cookie),
-58: $security_level_cookie = "2";  // selections.phpswitch($security_level_cookie), case "2" : ,
-53: $security_level_cookie = "1";  // selections.phpswitch($security_level_cookie), case "1" : ,
-48: $security_level_cookie = "0";  // selections.phpswitch($security_level_cookie), case "0" : ,
-41: $security_level_cookie = $_POST['security_level'];  // selections.php
-requires:
-38: if(isset($_POST['form_security_level']) && isset($_POST['security_level']))
-75: if($evil_bee == 1) else 
-```
 
-# ก่อนแก้ไข
-## รับค่ามาปุ๊บ ยัดใส่ Cookie ปั๊บ อันตรายมาก!
-![This is an alt text.](/img/img2/53.jpg)
+## หลักการเขียนโค้ดใหม่ (Secure Coding)
+### เราจะโละโค้ดเก่าทิ้ง แล้วใช้โครงสร้าง switch...case แทน
++ Logic: "ถ้าลูกค้าขอไฟล์ A, B หรือ C ให้หยิบให้... แต่ถ้าขอไฟล์อื่นนอกจากนี้ ให้ถีบออกไปทันที"
 
-# หลังแก้ไข
-## รับค่ามาปุ๊บ ยัดใส่ Cookie ปั๊บ อันตรายมาก!
-![This is an alt text.](/img/img2/54.jpg)
+## โค้ดที่ยังไม่ได้แก้ 
+![This is an alt text.](/img/img2/64.jpg)
 
----
-## เมื่อแก้โคตรเสร็จแล้วบันทึกและลากไฟล์จากด้านซ้ายไปด้านขวาและกด Yes
-![This is an alt text.](/img/img2/60.jpg)
+## โค้ดที่แก้ไขแล้ว 
+![This is an alt text.](/img/img2/65.jpg)
+
+## ทำไมถึงปลอดภัย?
+### RIPS หรือ Hacker จะไม่สามารถแทรกแซงคำสั่ง include ได้อีกต่อไป เพราะชื่อไฟล์ถูกฝังตายตัวไว้ในโค้ด (Hardcoded) ต่อให้ส่งค่าแปลกๆ มา ก็จะไปตกที่ default case เสมอ
 
 ---
 
-## เช็คผ่าน RIPS อีกครั้งว่าปัญหานั้นเป็น 0 แล้ว
-![This is an alt text.](/img/img2/61.jpg)
+# การตรวจสอบความสมบูรณ์ (Verification Phase)
+## หลังแก้โค้ด เราต้องตรวจเช็ค 3 มิติ เพื่อยืนยันว่างานเสร็จสมบูรณ์
 
 
-## ทดสอบการทำงานหลังแก้ไข
-เมื่อทำการแก้ไขโค้ดเสร็จสิ้นแล้ว ขั้นตอนสำคัญถัดมาคือการทดสอบระบบซ้ำ (Re-testing) เพื่อยืนยันว่าฟังก์ชันต่างๆ ยังคงทำงานได้ถูกต้อง และการปิดช่องโหว่นี้ไม่ได้ส่งผลกระทบให้ส่วนอื่นของระบบเสียหายครับ
-![This is an alt text.](/img/img2/62.jpg)
+## ตรวจสอบความปลอดภัย (Security Check)
++ การทดสอบ: ยิง Payload เดิม ../../../../etc/passwd
++ ผลลัพธ์: หน้าเว็บขึ้นข้อความสีแดง "Access Denied" แทนที่จะโชว์ไฟล์ความลับ
++ สถานะ: ✅ ผ่าน (กันแฮกเกอร์ได้แล้ว)
+![This is an alt text.](/img/img2/65.jpg)
 
-### การทดสอบที่ทำ:
-Server: 110.164.252.222 Address: 110.164.252.222#53 Non-authoritative answer: Name: www.ivecr5.ac.th Address: 122.155.166.155
+## ตรวจสอบกับ RIPS (Static Analysis Check)
++ การทดสอบ: สแกนไฟล์ rlfi.php ซ้ำ
++ ผลลัพธ์: RIPS ไม่แสดงแถบสีแดงหรือเหลืองอีกต่อไป ขึ้นสถานะ No vulnerabilities found
++ เหตุผล: RIPS วิเคราะห์แล้วว่า User Input ไม่สามารถเดินทางไปถึงฟังก์ชันอันตรายได้
++ สถานะ: ✅ ผ่าน (โค้ดสะอาดตามมาตรฐาน)
+![This is an alt text.](/img/img2/67.png)
+
+## ตรวจสอบการใช้งาน (Usability Check)
++ การทดสอบ: เลือกภาษา "English" จากเมนูหน้าเว็บ
++ ผลลัพธ์: เว็บไซต์โหลดข้อความภาษาอังกฤษได้ปกติ ไม่พัง ไม่ Error
++ สถานะ: ✅ ผ่าน (ผู้ใช้ใช้งานได้ปกติ)
+![This is an alt text.](/img/img2/67.png)
 
 ---
 
-#  ทำไมวิธีนี้ถึงปลอดภัย?
-1. ตัดวงจรข้อมูล (Data Flow Break): ข้อมูลดิบจากภายนอก ไม่สามารถไหลไปถึงจุดบันทึก (Sensitive Sink) ได้โดยตรงอีกต่อไป
-2. กฎเหล็ก (Whitelisting): เรากำหนดไว้เลยว่าใน Cookie จะมีได้แค่เลข 0, 1, 2 เท่านั้น แฮกเกอร์จะพยายามยัดเยียดโค้ดอันตราย หรือค่าแปลกปลอมลงไปไม่ได้เลย
-3. การซ่อนข้อมูล (HttpOnly): การปรับค่า setcookie ตัวสุดท้ายเป็น true เปรียบเสมือนการใส่กุญแจล็อค Cookie ไว้ ให้เฉพาะ Server เท่านั้นที่อ่านได้ โปรแกรมแฮกทางหน้าเว็บ (JavaScript) จะมองไม่เห็น
+## ทำไมถึงปลอดภัย?
+### RIPS หรือ Hacker จะไม่สามารถแทรกแซงคำสั่ง include ได้อีกต่อไป เพราะชื่อไฟล์ถูกฝังตายตัวไว้ในโค้ด (Hardcoded) ต่อให้ส่งค่าแปลกๆ มา ก็จะไปตกที่ default case เสมอ
 
----
-## สรุป
-จากเดิมที่ "ใครส่งอะไรมาก็รับหมด" เราเปลี่ยนระบบใหม่เป็น "เรากำหนดเอง (Whitelist) + เปลี่ยนรหัสผ่านใหม่ทุกครั้ง (Regenerate) + ซ่อนกุญแจไว้ (HttpOnly)" ทำให้แฮกเกอร์เจาะไม่เข้า และเครื่องมือสแกนหาเรื่องด่าไม่ได้อีกต่อไปครับ!
+
+
