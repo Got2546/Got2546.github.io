@@ -97,7 +97,7 @@ switch($_GET["language"]) {
 ## 5.3 ตรวจสอบการใช้งาน (Usability Check)
 ทดสอบเลือกภาษา "English" จากหน้าเว็บปกติ
 + ผลลัพธ์: เว็บไซต์แสดงผลถูกต้อง (ข้อความต้อนรับภาษาอังกฤษ) ผู้ใช้งานทั่วไปยังใช้งานได้ตามปกติ
-![This is an alt text.](/img/img2/6.jpg)
+![This is an alt text.](/img/img2/67.png)
 
 ===
 
