@@ -87,17 +87,17 @@ switch($_GET["language"]) {
 ## 5.1 ตรวจสอบความปลอดภัย (Security Check)
 ทดสอบยิง Payload เดิม ../../../../etc/passwd อีกครั้ง
 + ผลลัพธ์: ระบบแสดงข้อความ "Access Denied" สีแดง (ตามที่เราเขียนดักไว้ใน default) ไม่สามารถเข้าถึงไฟล์ความลับได้อีกต่อไป
-![This is an alt text.](/img/img2/66.jpg)
+![This is an alt text.](/img/img2/66.png)
 
 ## 5.2 ตรวจสอบคุณภาพโค้ด (RIPS Re-scan)
 สแกนไฟล์ที่แก้แล้วด้วย RIPS อีกครั้ง
 + ผลลัพธ์: RIPS ขึ้นสถานะ "No vulnerabilities found" (ไม่พบช่องโหว่) แถบสีแดง/เหลืองหายไปทั้งหมด ยืนยันว่าโค้ดบรรทัดที่ 29 ถึง 94 ปลอดภัยแล้ว
-![This is an alt text.](/img/img2/68.jpg)
+![This is an alt text.](/img/img2/68.png)
 
 ## 5.3 ตรวจสอบการใช้งาน (Usability Check)
 ทดสอบเลือกภาษา "English" จากหน้าเว็บปกติ
 + ผลลัพธ์: เว็บไซต์แสดงผลถูกต้อง (ข้อความต้อนรับภาษาอังกฤษ) ผู้ใช้งานทั่วไปยังใช้งานได้ตามปกติ
-![This is an alt text.](/img/img2/67.jpg)
+![This is an alt text.](/img/img2/6.jpg)
 
 ===
 
