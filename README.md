@@ -18,6 +18,7 @@
 - [thread](/Vocabuary/thread.md)
 - [channels](/Vocabuary/channels.md)
 - [GPO](/Vocabuary/GPT.md)
+- [การยืนยันตัวตน (Authentication)](/Authentication.md)
  
 ---
 
