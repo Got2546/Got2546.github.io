@@ -17,7 +17,7 @@
 ## 🧑‍🎓 Vocabuary
 - [thread](/Vocabuary/thread.md)
 - [channels](/Vocabuary/channels.md)
-- [GPO](/Vocabuary/GPT.md)
+- [GPO](/Vocabuary/GPO.md.md)
 - [การยืนยันตัวตน (Authentication)](/Authentication.md)
  
 ---
