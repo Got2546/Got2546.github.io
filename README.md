@@ -50,7 +50,7 @@
 ---
 
 ## 🔒 Security Control in Daily Life
-- [Firefighting](/Firefighting.md)
+- [ThaiID](/ThaiID.md)
 - [Order](/Order.md)
 
 ---
