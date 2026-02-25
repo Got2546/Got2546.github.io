@@ -50,8 +50,8 @@
 ---
 
 ## 🔒 Security Control in Daily Life
-- [ThaiID](/ThaiID.md)
-- [Firefighting](/Firefighting.md)
+- [ThaID](/ThaID.md)
+- [Fire extinguisher](/fireextinguisher.md)
 
 ---
 ## 📫 Contact
